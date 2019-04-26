@@ -24,7 +24,13 @@ describe('Lecturer functionalities', () =>{
 
   test("check to see that a lecturer can read his account by ID", () =>{
     let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
-    expect(femi.readYourAccount(1)).toEqual({id: 1, name: 'Femi Ayoola', email: 'femi@gmail.com', password: 1155, studentScores: [50, 60, 67, 75]})
+    expect(femi.readYourAccount(1)).toEqual({id: 1, username: 'Femi Ayoola', email: 'femi@gmail.com', password: 1155, studentScores: [50, 60, 67, 75]})
   });
+
+  test("check to see that a lecturer can read his account by ID", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.readYourAccount('1')).toEqual('Invalid Input: Please enter an integer')
+  });
+
 
 })
