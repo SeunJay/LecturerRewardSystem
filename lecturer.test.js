@@ -55,5 +55,10 @@ describe('Lecturer functionalities', () =>{
   test("Check to see that a registered lecturer can get his student's scores", () =>{
     let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
     expect(femi.getYourStudentScores(1)).toEqual('These are your student scores')
+  });
+
+  test("Return an error message if the data type of what is passed in is not a number", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.getYourStudentScores('1')).toEqual('Invalid Input: Please enter an integer')
   })
 })

@@ -66,7 +66,7 @@ Lecturer.prototype = {
           return 'These are your student scores'
         }
       }
-    }
+    } else return 'Invalid Input: Please enter an integer'
   }
 }
 
