@@ -56,7 +56,21 @@ Lecturer.prototype = {
         return 'Your account has been successfully updated'
       } else return 'You entered either the wrong username or password'
     }
+  },
+
+  getYourStudentScores: function(lecturerID){
+    if(typeof lecturerID === 'number'){
+      for(let i in db.lecturers){
+        if(lecturerID === db.lecturers[i].id){
+          console.log(db.lecturers[i].studentScores);
+          return 'These are your student scores'
+        }
+      }
+    }
   }
 }
+
+
+
 
 module.exports = Lecturer
