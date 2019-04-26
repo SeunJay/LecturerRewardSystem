@@ -63,12 +63,33 @@ Lecturer.prototype = {
       for(let i in db.lecturers){
         if(lecturerID === db.lecturers[i].id){
           console.log(db.lecturers[i].studentScores);
-          return 'These are your student scores'
+          return db.lecturers[i].studentScores
         } else return 'No account found'
       }
     } else return 'Invalid Input: Please enter an integer'
+  },
+
+  getStudentAverageScore: function(lecturerID){
+    if(typeof lecturerID === 'number'){
+      for(let i in db.lecturers){
+        if(lecturerID === db.lecturers[i].id){
+          let scores = db.lecturers[i].studentScores;
+          let sum = scores.reduce((a, b) => a + b);
+          let averageStudentScores = sum/scores.length;
+          console.log(averageStudentScores);
+          return averageStudentScores
+        }
+      }
+    }
   }
 }
+
+let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+console.log(femi.createAccount());
+
+//console.log(femi.getYourStudentScores(1))
+
+console.log(femi.getStudentAverageScore(1))
 
 
 
