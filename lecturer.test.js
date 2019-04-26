@@ -32,5 +32,18 @@ describe('Lecturer functionalities', () =>{
     expect(femi.readYourAccount('1')).toEqual('Invalid Input: Please enter an integer')
   });
 
+  test("check to see that a lecturer can read his account by ID", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.readYourAccount(10)).toEqual('No account found')
+  });
 
+  test("check to see that a lecturer can read his account by ID", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.readYourAccount(10)).toEqual('No account found')
+  });
+
+  test("check to see that a lecturer can read his account by ID", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.updateYourAccount('Femi Ayoola', 'Femzy', 1155, 1115, 'femi@gmail.com', [60, 70, 65, 71])).toEqual('Your account has been successfully updated')
+  });
 })
