@@ -80,8 +80,8 @@ Lecturer.prototype = {
           return averageStudentScores
         }
       }
-    }
-  }
+    } else return 'Invalid Input: Please enter an integer'
+  } 
 }
 
 let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);

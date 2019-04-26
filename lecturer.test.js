@@ -68,5 +68,9 @@ describe('Lecturer functionalities', () =>{
 
   test("Check to see that a lecturer can compute his student's average score", () =>{
     expect(femi.getStudentAverageScore(1)).toBe(63)
+  });
+
+  test("Should an error if the data type of what is passed in is not a number", () =>{
+    expect(femi.getStudentAverageScore('1')).toEqual('Invalid Input: Please enter an integer')
   })
 })
