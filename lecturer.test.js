@@ -46,4 +46,9 @@ describe('Lecturer functionalities', () =>{
     let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
     expect(femi.updateYourAccount('Femi Ayoola', 'Femzy', 1155, 1115, 'femi@gmail.com', [60, 70, 65, 71])).toEqual('Your account has been successfully updated')
   });
+
+  test("Should return am error message if a wrong username or password is passed in", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.updateYourAccount('Femi Aya', 'Femzy', 1155, 1115, 'femi@gmail.com', [60, 70, 65, 71])).toEqual('You entered either the wrong username or password')
+  });
 })
