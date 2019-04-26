@@ -54,7 +54,7 @@ Lecturer.prototype = {
         db.lecturers[i].password = this.newpassword;
         console.log(db.lecturers[i]);
         return 'Your account has been successfully updated'
-      } //else return 'You entered either '
+      } else return 'You entered either the wrong username or password'
     }
   }
 }
