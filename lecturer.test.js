@@ -1,8 +1,11 @@
 const Lecturer = require('./lecturer');
 const db = require('./db');
+const Hod = require('./HOD');
 
 let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
 let ojo = new Lecturer("Wole Ojo", "ojo@gmail.com", 2234, [60, 70, 67, 75]);
+
+let chukwu = new Hod('Chukwu Angela', 'chukwu@gmail.com', 4567);
 
 describe('Lecturer functionalities', () =>{
   test('Check to see that the Lecturer constructor has been defined', () =>{
@@ -76,5 +79,12 @@ describe('Lecturer functionalities', () =>{
 
   test("Should an error if the data type of what is passed in is not a number", () =>{
     expect(femi.getStudentAverageScore(10)).toEqual('No account found')
+  })
+});
+
+describe('HOD functionalities', () =>{
+  test('Check to see that the HOD constructor has been defined', () =>{
+    let chukwu = new Hod('Chukwu Angela', 'chukwu@gmail.com', 4567)
+    expect(chukwu).toBeDefined();
   })
 })
