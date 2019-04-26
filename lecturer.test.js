@@ -84,7 +84,10 @@ describe('Lecturer functionalities', () =>{
 
 describe('HOD functionalities', () =>{
   test('Check to see that the HOD constructor has been defined', () =>{
-    let chukwu = new Hod('Chukwu Angela', 'chukwu@gmail.com', 4567)
     expect(chukwu).toBeDefined();
+  });
+
+  test("Check for the instance of the Hod Constructor", () =>{
+    expect(chukwu).toEqual({username: 'Chukwu Angela', email: 'chukwu@gmail.com', password: 4567})
   })
 })
