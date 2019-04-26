@@ -1,0 +1,24 @@
+{
+  "name": "LecturerRewardSystem",
+  "version": "1.0.0",
+  "description": "A system to provide lecturers with incentives aimed at improving their performance",
+  "main": "HOD.js",
+  "dependencies": {
+    "jest": "^24.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeunJay/LecturerRewardSystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeunJay/LecturerRewardSystem/issues"
+  },
+  "homepage": "https://github.com/SeunJay/LecturerRewardSystem#readme"
+}
