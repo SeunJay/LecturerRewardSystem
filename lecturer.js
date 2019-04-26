@@ -28,6 +28,17 @@ Lecturer.prototype = {
 
     console.log(db.lecturers);
     return 'Your account has been successfully created'
+  },
+
+  readYourAccount: function(lecturerID){
+    if(typeof lecturerID === 'number'){
+      for(let i in db.lecturers){
+        if(lecturerID === db.lecturers[i].id){
+          //console.log(db.lecturers[i]);
+          return db.lecturers[i];
+        }
+      }
+    } else return 'Invalid Input: Please enter an integer'
   }
 }
 
