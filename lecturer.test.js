@@ -89,5 +89,9 @@ describe('HOD functionalities', () =>{
 
   test("Check for the instance of the Hod Constructor", () =>{
     expect(chukwu).toEqual({username: 'Chukwu Angela', email: 'chukwu@gmail.com', password: 4567})
+  });
+
+  test("Check to see that Hod Chukwu can create her account", () =>{
+    expect(chukwu.createAccount()).toEqual('Your account has been successfully created')
   })
 })
