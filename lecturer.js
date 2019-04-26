@@ -15,7 +15,7 @@ Lecturer.prototype = {
     let id = 0;
     //let message = '';
     if(db.lecturers.length){
-      id = db.lecturers[db.lecturers.length].id + 1
+      id = db.lecturers[db.lecturers.length - 1].id + 1
     } else id = 1
 
     db.lecturers.push({
