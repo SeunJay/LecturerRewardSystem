@@ -34,11 +34,28 @@ Lecturer.prototype = {
     if(typeof lecturerID === 'number'){
       for(let i in db.lecturers){
         if(lecturerID === db.lecturers[i].id){
-          //console.log(db.lecturers[i]);
           return db.lecturers[i];
-        }
+        } else return 'No account found'
       }
     } else return 'Invalid Input: Please enter an integer'
+  },
+
+  updateYourAccount: function(username, newusername, password, newpassword, email, ...studentScores){
+    this.username = username;
+    this.newusername = newusername;
+    this.password = password;
+    this.newpassword = newpassword;
+    this.email = email;
+    this.studentScores = studentScores;
+
+    for(let i in db.lecturers){
+      if(this.username === db.lecturers[i].username && this.password === db.lecturers[i].password){
+        db.lecturers[i].username = this.newusername;
+        db.lecturers[i].password = this.newpassword;
+        console.log(db.lecturers[i]);
+        return 'Your account has been successfully updated'
+      } //else return 'You entered either '
+    }
   }
 }
 
