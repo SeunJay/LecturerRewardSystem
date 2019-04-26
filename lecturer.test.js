@@ -51,4 +51,9 @@ describe('Lecturer functionalities', () =>{
     let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
     expect(femi.updateYourAccount('Femi Aya', 'Femzy', 1155, 1115, 'femi@gmail.com', [60, 70, 65, 71])).toEqual('You entered either the wrong username or password')
   });
+
+  test("Check to see that a registered lecturer can get his student's scores", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.getYourStudentScores(1)).toEqual('These are your student scores')
+  })
 })
