@@ -78,7 +78,7 @@ Lecturer.prototype = {
           let averageStudentScores = sum/scores.length;
           console.log(averageStudentScores);
           return averageStudentScores
-        }
+        } else return 'No account found'
       }
     } else return 'Invalid Input: Please enter an integer'
   } 

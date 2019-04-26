@@ -72,5 +72,9 @@ describe('Lecturer functionalities', () =>{
 
   test("Should an error if the data type of what is passed in is not a number", () =>{
     expect(femi.getStudentAverageScore('1')).toEqual('Invalid Input: Please enter an integer')
+  });
+
+  test("Should an error if the data type of what is passed in is not a number", () =>{
+    expect(femi.getStudentAverageScore(10)).toEqual('No account found')
   })
 })
