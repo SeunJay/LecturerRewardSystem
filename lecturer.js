@@ -64,7 +64,7 @@ Lecturer.prototype = {
         if(lecturerID === db.lecturers[i].id){
           console.log(db.lecturers[i].studentScores);
           return 'These are your student scores'
-        }
+        } else return 'No account found'
       }
     } else return 'Invalid Input: Please enter an integer'
   }

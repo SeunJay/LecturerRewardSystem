@@ -60,5 +60,10 @@ describe('Lecturer functionalities', () =>{
   test("Return an error message if the data type of what is passed in is not a number", () =>{
     let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
     expect(femi.getYourStudentScores('1')).toEqual('Invalid Input: Please enter an integer')
+  });
+
+  test("Return an error message if the data type of what is passed in is not a number", () =>{
+    let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
+    expect(femi.getYourStudentScores(10)).toEqual('No account found')
   })
 })
