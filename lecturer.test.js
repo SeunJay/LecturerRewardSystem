@@ -93,5 +93,21 @@ describe('HOD functionalities', () =>{
 
   test("Check to see that Hod Chukwu can create her account", () =>{
     expect(chukwu.createAccount()).toEqual('Your account has been successfully created')
-  })
+  });
+
+  test("Check to see that Hod Chukwu can create her account", () =>{
+    expect(chukwu.readAllAccounts()).toEqual('These are all the available accounts');
+  });
+
+  test("Check to see that Hod Chukwu can create her account", () =>{
+    expect(chukwu.deleteAllAccounts()).toEqual('All accounts have been successfully deleted');
+  });
+
+  test("Check to see that Hod Chukwu can create her account", () =>{
+    expect(chukwu.readAllAccounts()).toEqual("No lecturer's account available");
+  });
+
+  test("Check to see that Hod Chukwu can create her account", () =>{
+    expect(chukwu.deleteAllAccounts()).toEqual('All accounts have been successfully deleted');
+  });
 })
