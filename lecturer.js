@@ -1,5 +1,6 @@
 const db = require('./db');
 
+
 function Lecturer(username, email, password, ...studentScores){
   this.username = username;
   this.email = email;
@@ -11,32 +12,20 @@ function Lecturer(username, email, password, ...studentScores){
 Lecturer.prototype = {
   constructor: Lecturer,
 
-  createAccount: function(){
-    let id = 0;
-    //let message = '';
-    if(db.lecturers.length){
-      id = db.lecturers[db.lecturers.length - 1].id + 1
-    } else id = 1
+  createAccount: function(){ 
+      function idGen() {
+        return db.lecturers.length === 0 ? id = 1 : id = db.lecturers[db.lecturers.length - 1].id + 1
+      }
 
-    db.lecturers.push({
-        id: id,
-        username: this.username,
-        email: this.email,
-        password: this.password,
-        studentScores: this.studentScores
-    });
-
-    console.log(db.lecturers);
-    return 'Your account has been successfully created'
+      this.id = idGen()
+      db.lecturers.push(this);
+      return 'Your account has been successfully created'
   },
 
   readYourAccount: function(lecturerID){
     if(typeof lecturerID === 'number'){
-      for(let i in db.lecturers){
-        if(lecturerID === db.lecturers[i].id){
-          return db.lecturers[i];
-        } else return 'No account found'
-      }
+      const user = db.lecturers.find(user => user.id === lecturerID)
+      return user ? user : 'No account found'
     } else return 'Invalid Input: Please enter an integer'
   },
 
@@ -52,7 +41,6 @@ Lecturer.prototype = {
       if(this.username === db.lecturers[i].username && this.password === db.lecturers[i].password){
         db.lecturers[i].username = this.newusername;
         db.lecturers[i].password = this.newpassword;
-        console.log(db.lecturers[i]);
         return 'Your account has been successfully updated'
       } else return 'You entered either the wrong username or password'
     }
@@ -60,36 +48,34 @@ Lecturer.prototype = {
 
   getYourStudentScores: function(lecturerID){
     if(typeof lecturerID === 'number'){
-      for(let i in db.lecturers){
-        if(lecturerID === db.lecturers[i].id){
-          console.log(db.lecturers[i].studentScores);
-          return db.lecturers[i].studentScores
-        } else return 'No account found'
-      }
+      const user = db.lecturers.find(user => user.id === lecturerID)
+      if(!user) return "No account found"
+      return user.studentScores 
     } else return 'Invalid Input: Please enter an integer'
   },
 
   getStudentAverageScore: function(lecturerID){
     if(typeof lecturerID === 'number'){
-      for(let i in db.lecturers){
-        if(lecturerID === db.lecturers[i].id){
-          let scores = db.lecturers[i].studentScores;
-          let sum = scores.reduce((a, b) => a + b);
-          let averageStudentScores = sum/scores.length;
-          console.log(averageStudentScores);
-          return averageStudentScores
-        } else return 'No account found'
-      }
+    const user = db.lecturers.find(user => user.id === lecturerID) 
+    if(!user) return "No account found"
+    const sum = user.studentScores.reduce((a, b) => a + b)
+    const averageStudentScores = sum/user.studentScores.length
+    return averageStudentScores
     } else return 'Invalid Input: Please enter an integer'
   } 
 }
 
+
+
 let femi = new Lecturer("Femi Ayoola", "femi@gmail.com", 1155, [50, 60, 67, 75]);
 console.log(femi.createAccount());
+let ojo = new Lecturer("Wole Ojo", "ojo@gmail.com", 2234, [60, 70, 67, 75]);
+console.log(ojo.createAccount());
 
-//console.log(femi.getYourStudentScores(1))
+// console.log(ojo.readYourAccount(1));
+// console.log(ojo.getStudentAverageScore('1'))
 
-console.log(femi.getStudentAverageScore(1))
+// console.log(db.lecturers[0].studentScores)
 
 
 
