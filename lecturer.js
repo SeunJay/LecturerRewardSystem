@@ -72,10 +72,6 @@ console.log(femi.createAccount());
 let ojo = new Lecturer("Wole Ojo", "ojo@gmail.com", 2234, [60, 70, 67, 75]);
 console.log(ojo.createAccount());
 
-// console.log(ojo.readYourAccount(1));
-// console.log(ojo.getStudentAverageScore('1'))
-
-// console.log(db.lecturers[0].studentScores)
 
 
 
